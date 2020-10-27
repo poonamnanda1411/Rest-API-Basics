@@ -1,0 +1,32 @@
+This code repository consists of the following apps
+API Basic
+Cisco App
+<h2>Walmart Stores</h2>
+There are multiple classes in the models.py: Region,  Country, State, City and Location. There is a foreign key relationship among them. It creates a Region hierarchy.
+Region(name)
+Country(name, region)
+State(name, country)
+City(name, state)
+LocationData(name, city)
+
+Serializer classes have been defined that inherit from the Model Serializer class.
+Each one has a Meta class that refers to the model and takes all fields.
+
+Data has been inserted using the admin login.
+
+Views.py
+ListAPIView has been used.
+Region name is extracted from the URL using self.kwargs.get
+Queryset filter has been used to extract relevant data
+
+
+
+URLS file has regular expression form of URLs
+http://127.0.0.1:8000/api/location/<region>/
+http://127.0.0.1:8000/api/location/<region>/<country>/
+http://127.0.0.1:8000/api/location/<region>/<country>/<state>/
+http://127.0.0.1:8000/api/location/<region>/<country>/<state>/<city>/
+
+Example:
+http://127.0.0.1:8000/api/location/East/Japan/
+
